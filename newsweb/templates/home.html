@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    {% for x in api.articles %}
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card" style="width: 18rem">
+        <img src="{{x.urlToImage}}" class="card-img-top" alt="{{x.source.name}}" />
+        <div class="card-body">
+          <h5 class="card-title">{{x.title}}</h5>
+          <p class="card-text">
+            {{x.description|truncatechars:150}}
+          </p>
+          <a href="{{x.url}}" target="_blank" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+      <br>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<!-- Footer -->
+<footer class="page-footer font-small bg-info unique-color-dark pt-4">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Call to action -->
+    <ul class="list-unstyled list-inline text-center py-2">
+      <li class="list-inline-item">
+        <h5 class="mb-1">Register for free</h5>
+      </li>
+      <li class="list-inline-item">
+        <a href="#!" class="btn btn-outline-dark rounded-pill">Sign up!</a>
+      </li>
+    </ul>
+    <!-- Call to action -->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright @Sayan Bose:
+    <a href="#" style="color: brown;"> newsINDIA.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+{% endblock body %}
